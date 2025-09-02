@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
 describe('Login', () => {
-
     it('Deve fazer login com sucesso', () => {
         cy.request({
             method: 'POST',
@@ -16,5 +15,4 @@ describe('Login', () => {
             cy.log(response.body.authorization)
         })
     });
-
 });

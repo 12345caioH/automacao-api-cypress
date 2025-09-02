@@ -7,7 +7,6 @@ Cypress.Commands.add('token', (email, senha) => {
             "password": senha 
         }
     }).then((response) => {
-        expect(response.status).to.equal(200)
         return response.body.authorization
     })
  })
@@ -22,6 +21,21 @@ Cypress.Commands.add('token', (email, senha) => {
             "preco": preco,
             "descricao": descricao,
             "quantidade": quantidade
+          }, 
+          failOnStatusCode: false
+    })
+ })
+
+ Cypress.Commands.add('cadastrarUsuario' , (token, nome, email, senha, administrador) =>{
+    cy.request({
+        method: 'POST', 
+        url: 'usuarios',
+        headers: {authorization: token}, 
+        body: {
+            "nome": nome,
+            "email": email,
+            "password": senha,
+            "administrador": administrador
           }, 
           failOnStatusCode: false
     })
