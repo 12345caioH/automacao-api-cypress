@@ -64,16 +64,7 @@ describe('Testes da Funcionalidade Usuários', () => {
                 expect(response.status).to.equal(201)
                 expect(response.body.message).to.equal('Cadastro realizado com sucesso')
             });
-      }) 
-  
-
-
-
-
-
-
-
-
+      });
   });
 
   it('Deve deletar um usuário previamente cadastrado - DELETE', () => {
