@@ -40,6 +40,11 @@ pipeline {
                 bat 'set NO_COLOR=1 && npm run cy:run'
             }
         }
+        stage('Popular banco') {
+            steps {
+               bat 'node scripts/seed.js'
+            }
+        }
     }
 }
 
