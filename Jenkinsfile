@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Setup'){
             steps {
-                url: 'https://github.com/12345caioH/automacao-api-cypress.git'
+                git branch: 'main', url: 'https://github.com/12345caioH/automacao-api-cypress.git'
             }
         }
         stage('Instalar dependências'){
